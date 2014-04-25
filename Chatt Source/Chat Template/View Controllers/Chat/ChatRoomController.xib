@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+    <dependencies>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatRoomController">
+            <connections>
+                <outlet property="btnForSearch" destination="jJM-u6-Ib2" id="5Bl-v5-uqG"/>
+                <outlet property="ctrlForChat" destination="7CD-wp-zQH" id="ydB-X1-gnc"/>
+                <outlet property="more" destination="Uou-54-opX" id="LqV-O7-0O4"/>
+                <outlet property="tblForChat" destination="Juw-hY-Cl4" id="7Ae-hd-FYU"/>
+                <outlet property="txtForMessage" destination="KG4-gE-c8x" id="IYZ-sY-FIF"/>
+                <outlet property="view" destination="0bm-am-v2E" id="IIC-Qd-96o"/>
+                <outlet property="viewForInput" destination="4Xt-aR-vsj" id="LZj-Qk-wJy"/>
+                <outlet property="viewForTitle" destination="ZYL-Xh-D3I" id="ZHE-23-jlK"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="0bm-am-v2E">
+            <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" id="YMa-tS-FbE">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Juw-hY-Cl4" userLabel="Tbl - Message" customClass="UITouchTableView">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="411"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="abG-18-mAw"/>
+                                <outlet property="delegate" destination="-1" id="PPJ-Rm-NiC"/>
+                            </connections>
+                        </tableView>
+                        <view contentMode="scaleToFill" id="4Xt-aR-vsj" userLabel="View - Chat Input">
+                            <rect key="frame" x="0.0" y="411" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="dTY-hB-rm1" userLabel="Img - Background">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="IRP-gM-JyW" userLabel="Btn - Camera">
+                                    <rect key="frame" x="10" y="11" width="25" height="22"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" image="chat_camera.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" id="Cwi-u5-R4I" userLabel="Btn - Post">
+                                    <rect key="frame" x="272" y="16" width="30" height="12"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <state key="normal" title="Send" image="chat_post.png">
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="onBtnPost:" destination="-1" eventType="touchUpInside" id="OaY-eD-amX"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" id="Epg-4g-Ege" userLabel="View - Message">
+                                    <rect key="frame" x="43" y="7" width="221" height="29"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chat_input_textfield.png" id="Crp-xv-ZzZ" userLabel="Img - Text Filed">
+                                            <rect key="frame" x="0.0" y="0.0" width="221" height="29"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" id="KG4-gE-c8x" userLabel="Txt - Mesage">
+                                            <rect key="frame" x="10" y="0.0" width="201" height="29"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="-1" id="4ro-tB-dtX"/>
+                                            </connections>
+                                        </textField>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <inset key="insetFor6xAndEarlier" minX="0.0" minY="0.0" maxX="0.0" maxY="-17"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+        <view contentMode="scaleToFill" id="ZYL-Xh-D3I" userLabel="View - Title">
+            <rect key="frame" x="0.0" y="0.0" width="139" height="28"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="7CD-wp-zQH">
+                    <rect key="frame" x="20" y="0.0" width="161" height="29"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <segments>
+                        <segment title="My Chats" width="60"/>
+                        <segment title="All Chats" width="60"/>
+                    </segments>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <action selector="segmentIndexChanged:" destination="-1" eventType="valueChanged" id="nNL-1a-qYE"/>
+                    </connections>
+                </segmentedControl>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+        </view>
+        <barButtonItem systemItem="search" id="jJM-u6-Ib2"/>
+        <barButtonItem systemItem="organize" id="Uou-54-opX"/>
+    </objects>
+    <resources>
+        <image name="chat_camera.png" width="25" height="19"/>
+        <image name="chat_input_textfield.png" width="221" height="29"/>
+        <image name="chat_post.png" width="30" height="12"/>
+    </resources>
+</document>
